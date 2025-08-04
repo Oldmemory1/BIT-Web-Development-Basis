@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Log
 @Controller
@@ -20,12 +19,33 @@ public class PaperController {
     }
     @PostMapping("/api/submit_answer")
     public ResponseEntity<?> submitAnswer(@RequestBody List<String> answers){
+        boolean answersIsValid = true;
+        String[] validAnswersArray={"A","B","C","D"};
+        List<String> validAnswersList=new ArrayList<>();
+        Collections.addAll(validAnswersList,validAnswersArray);
         log.info(answers.toString());
-        return ResponseEntity.ok(Map.of(
-                "status", "success",
-                "message", "问卷提交成功",
-                "data", answers
-        ));
+        for(String answer : answers){
+            if (!validAnswersList.contains(answer)) {
+                answersIsValid = false;
+                break;
+            }
+        }
+        if(answersIsValid){
+            return ResponseEntity.ok(Map.of(
+                    "status", "success",
+                    "message", "问卷提交成功",
+                    "data", answers
+            ));
+        }else{
+            return ResponseEntity.badRequest().body(Map.of(
+                    "status", "fail",
+                    "message", "问卷提交失败",
+                    "data", answers
+            ));
+        }
+
+
+
     }
 
 
