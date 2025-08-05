@@ -31,6 +31,13 @@
     </form>
     <p><button id="button_2" name="button2" onclick="submit_selection2()">提交</button></p>
 </div>
+<div>
+    <form>
+        <label for="content1">content:</label>
+        <input type="text" id="content1" name="content1"><br>
+        <input type="button" onclick="submit_content1()" value="提交">
+    </form>
+</div>
 </body>
 </html>
 
@@ -69,6 +76,17 @@
             console.log(`selectedText: ${selectedText}, selectedValue: ${selectedValue}`);
         } else {
             console.log("No choice");
+        }
+    }
+</script>
+<script type="text/javascript">
+    function submit_content1() {
+        const inputElement = document.getElementById('content1');
+        const content = inputElement.value;
+        if(content){
+            console.log(content);
+        }else{
+            console.log("请添加内容")
         }
 
     }

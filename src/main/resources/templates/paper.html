@@ -11,17 +11,20 @@
 <script type="text/javascript">
     async function test() {
         try {
-            const data1 = 'B';
-            const data2 = 'A';
-            const data3 = 'C';
-            const data4 = 'D';
-            const answers = [data1, data2, data3, data4];
+            const dict={
+                name : "LiMing",
+                id: "1024",
+                question1: "E",
+                question2: "B",
+                question3: "C",
+                question4: "D"
+            }
             const response = await fetch('http://localhost:8192/api/submit_answer', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(answers) // 将数组转为JSON字符串
+                body: JSON.stringify(dict) // 将数组转为JSON字符串
             });
             const result = await response.json();
             console.log(result.data);

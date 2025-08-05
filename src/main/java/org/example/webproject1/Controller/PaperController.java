@@ -18,18 +18,22 @@ public class PaperController {
         return "paper";
     }
     @PostMapping("/api/submit_answer")
-    public ResponseEntity<?> submitAnswer(@RequestBody List<String> answers){
+    public ResponseEntity<?> submitAnswer(@RequestBody Map<String, String> answers){
         boolean answersIsValid = true;
         String[] validAnswersArray={"A","B","C","D"};
         List<String> validAnswersList=new ArrayList<>();
         Collections.addAll(validAnswersList,validAnswersArray);
         log.info(answers.toString());
-        for(String answer : answers){
-            if (!validAnswersList.contains(answer)) {
-                answersIsValid = false;
-                break;
+        Set<String> elements = answers.keySet();
+        log.info(elements.toString());
+        for(String element:elements){
+            if(element.contains("question")){
+                if(!validAnswersList.contains(answers.get(element))){
+                    answersIsValid=false;
+                }
             }
         }
+
         if(answersIsValid){
             return ResponseEntity.ok(Map.of(
                     "status", "success",
@@ -47,7 +51,5 @@ public class PaperController {
 
 
     }
-
-
 
 }
