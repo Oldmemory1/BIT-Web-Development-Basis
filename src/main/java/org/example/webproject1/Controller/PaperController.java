@@ -3,7 +3,6 @@ package org.example.webproject1.Controller;
 import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +13,7 @@ import java.util.*;
 @Controller
 public class PaperController {
     @RequestMapping("/paper")
-    public String openPaper(Model model){
+    public String openPaper(){
         return "paper";
     }
     @PostMapping("/api/submit_answer")
