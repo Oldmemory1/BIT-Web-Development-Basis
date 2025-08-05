@@ -1,0 +1,18 @@
+#student_name {
+    width: 400px;     /* 宽度 */
+    height: 25px;     /* 高度 */
+    font-size: 15px;  /* 文字大小 */
+    padding: 10px;    /* 内边距 */
+}
+#selection_1 {
+    width: 200px;   /* 宽度 */
+    height: 40px;   /* 高度，部分浏览器可能不生效，可以尝试用padding代替 */
+    font-size: 16px; /* 字体大小 */
+    padding: 10px;   /* 内边距，有助于调整内部文本的位置 */
+}
+#selection_2 {
+    width: 200px;   /* 宽度 */
+    height: 40px;   /* 高度，部分浏览器可能不生效，可以尝试用padding代替 */
+    font-size: 16px; /* 字体大小 */
+    padding: 10px;   /* 内边距，有助于调整内部文本的位置 */
+}

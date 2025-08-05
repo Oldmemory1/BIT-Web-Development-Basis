@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
     <title>Paper</title>
+    <script src="../static/script_for_paper.js" type="text/javascript"></script>
 </head>
 <body>
-    <button onclick="test()">测试用按钮</button>
+<div>
+    <form>
+        <h3><label for="student_name">学生姓名:</label></h3>
+        <input type="text" id="student_name" name="student_name"><br>
+    </form>
+</div>
+<div>
+    <h2>一.单项选择题</h2>
+    <div>
+        <label for="selection_1">1:题目1</label><br>
+        <p></p>
+        <select id="selection_1" name="selection1">
+            <option value="choice1">A</option>
+            <option value="choice2">B</option>
+            <option value="choice3">C</option>
+            <option value="choice4">D</option>
+        </select>
+    </div>
+    <p></p>
+    <div>
+        <label for="selection_2">2:题目2</label><br>
+        <p></p>
+        <select id="selection_2" name="selection2">
+            <option value="choice1">A</option>
+            <option value="choice2">B</option>
+            <option value="choice3">C</option>
+            <option value="choice4">D</option>
+        </select>
+    </div>
+</div>
+
+<div>
+    <p><button onclick="test()">测试用按钮</button></p>
+</div>
+
 </body>
 </html>
-<script type="text/javascript">
-    async function test() {
-        try {
-            const dict={
-                name : "LiMing",
-                id: "1024",
-                question1: "E",
-                question2: "B",
-                question3: "C",
-                question4: "D"
-            }
-            const response = await fetch('http://localhost:8192/api/submit_answer', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dict) // 将数组转为JSON字符串
-            });
-            const result = await response.json();
-            console.log(result.data);
-            console.log(result.status);
-            console.log(result.message);
 
-        } catch (error) {
-            console.error('请求错误:', error);
-        }
-        window.alert("message1");
-    }
-</script>
 
