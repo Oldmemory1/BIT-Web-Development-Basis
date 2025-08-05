@@ -38,6 +38,12 @@
         <input type="button" onclick="submit_content1()" value="提交">
     </form>
 </div>
+<div>
+    <p><button onclick="toggle_content()">点击展开/折叠内容</button></p>
+    <div id="folded_content" style="display:none">
+        <p>folded_content</p>
+    </div>
+</div>
 </body>
 </html>
 
@@ -88,6 +94,27 @@
         }else{
             console.log("请添加内容")
         }
+
+    }
+</script>
+
+<script type="text/javascript">
+    async function toggle_content() {
+        const content = document.getElementById("folded_content");
+        if (content.style.display === "none") {
+            content.style.display = "block";
+            const response = await fetch('http://localhost:8192/api/test', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
+            const result = await response.json();
+            content.textContent = result.data;
+        } else {
+            content.style.display = "none";
+        }
+
 
     }
 </script>
