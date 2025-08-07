@@ -120,7 +120,7 @@
     </div>
     <p></p>
     <div>
-        <p>6:题目6:</p>
+        <p>9:题目9:</p>
         <form>
             <fieldset style="font-size: 20px; line-height: 1.5;" id="selection_9">
                 <input type="radio" id="selection_9_choice1" name="selection_9" value="A">
@@ -159,16 +159,16 @@
         <form>
             <fieldset style="font-size: 20px; line-height: 1.5;" id="selection_11">
                 <label>
-                    <input type="checkbox" name="selection11" id="selection_11_choice1" value="A">A
+                    <input type="checkbox" name="selection_11" id="selection_11_choice1" value="A">A
                 </label><br>
                 <label>
-                    <input type="checkbox" name="selection11" id="selection_11_choice2" value="B">B
+                    <input type="checkbox" name="selection_11" id="selection_11_choice2" value="B">B
                 </label><br>
                 <label>
-                    <input type="checkbox" name="selection11" id="selection_11_choice3" value="C">C
+                    <input type="checkbox" name="selection_11" id="selection_11_choice3" value="C">C
                 </label><br>
                 <label>
-                    <input type="checkbox" name="selection11" id="selection_11_choice4" value="D">D
+                    <input type="checkbox" name="selection_11" id="selection_11_choice4" value="D">D
                 </label>
             </fieldset>
         </form>
@@ -179,16 +179,16 @@
         <form>
             <fieldset style="font-size: 20px; line-height: 1.5;" id="selection_12">
                 <label>
-                    <input type="checkbox" name="selection12" id="selection_12_choice1" value="A">A
+                    <input type="checkbox" name="selection_12" id="selection_12_choice1" value="A">A
                 </label><br>
                 <label>
-                    <input type="checkbox" name="selection12" id="selection_12_choice2" value="B">B
+                    <input type="checkbox" name="selection_12" id="selection_12_choice2" value="B">B
                 </label><br>
                 <label>
-                    <input type="checkbox" name="selection12" id="selection_12_choice3" value="C">C
+                    <input type="checkbox" name="selection_12" id="selection_12_choice3" value="C">C
                 </label><br>
                 <label>
-                    <input type="checkbox" name="selection12" id="selection_12_choice4" value="D">D
+                    <input type="checkbox" name="selection_12" id="selection_12_choice4" value="D">D
                 </label>
             </fieldset>
         </form>
@@ -295,6 +295,136 @@
                 throw new Error("题目6没有选择选项")
             }
 
+            //单选题7
+            let radiosOfSelection7 = document.getElementsByName("selection_7");
+            let selectedValueOfSelection7 = null;
+            let selectedTextOfSelection7 = null;
+            let selectedIdOfSelection7 = null;
+            for(const radio of radiosOfSelection7){
+                if(radio.checked){
+                    selectedValueOfSelection7 = radio.value;
+                    selectedTextOfSelection7 = radio.text;
+                    selectedIdOfSelection7 = radio.id;
+                    const labelOfSelection7 = document.querySelector(`label[for="${selectedIdOfSelection7}"]`);
+                    if(labelOfSelection7){
+                        selectedTextOfSelection7 = labelOfSelection7.textContent;
+                    }else{
+                        selectedTextOfSelection7 = "unknown";
+                    }
+                    break;
+                }
+            }
+            if (selectedValueOfSelection7) {
+                dict['question7'] = selectedValueOfSelection7;
+            } else {
+                throw new Error("题目7没有选择选项")
+            }
+
+            //单选题8
+            let radiosOfSelection8 = document.getElementsByName("selection_8");
+            let selectedValueOfSelection8 = null;
+            let selectedTextOfSelection8 = null;
+            let selectedIdOfSelection8 = null;
+            for(const radio of radiosOfSelection8){
+                if(radio.checked){
+                    selectedValueOfSelection8 = radio.value;
+                    selectedTextOfSelection8 = radio.text;
+                    selectedIdOfSelection8 = radio.id;
+                    const labelOfSelection8 = document.querySelector(`label[for="${selectedIdOfSelection8}"]`);
+                    if(labelOfSelection8){
+                        selectedTextOfSelection8 = labelOfSelection8.textContent;
+                    }else{
+                        selectedTextOfSelection8 = "unknown";
+                    }
+                    break;
+                }
+            }
+            if (selectedValueOfSelection8) {
+                dict['question8'] = selectedValueOfSelection8;
+            } else {
+                throw new Error("题目8没有选择选项")
+            }
+
+            //单选题9
+            let radiosOfSelection9 = document.getElementsByName("selection_9");
+            let selectedValueOfSelection9 = null;
+            let selectedTextOfSelection9 = null;
+            let selectedIdOfSelection9 = null;
+            for(const radio of radiosOfSelection9){
+                if(radio.checked){
+                    selectedValueOfSelection9 = radio.value;
+                    selectedTextOfSelection9 = radio.text;
+                    selectedIdOfSelection9 = radio.id;
+                    const labelOfSelection9 = document.querySelector(`label[for="${selectedIdOfSelection9}"]`);
+                    if(labelOfSelection9){
+                        selectedTextOfSelection9 = labelOfSelection9.textContent;
+                    }else{
+                        selectedTextOfSelection9 = "unknown";
+                    }
+                    break;
+                }
+            }
+            if (selectedValueOfSelection9) {
+                dict['question9'] = selectedValueOfSelection9;
+            } else {
+                throw new Error("题目9没有选择选项")
+            }
+
+            //单选题10
+            let radiosOfSelection10 = document.getElementsByName("selection_10");
+            let selectedValueOfSelection10 = null;
+            let selectedTextOfSelection10 = null;
+            let selectedIdOfSelection10 = null;
+            for(const radio of radiosOfSelection6){
+                if(radio.checked){
+                    selectedValueOfSelection10 = radio.value;
+                    selectedTextOfSelection10 = radio.text;
+                    selectedIdOfSelection10 = radio.id;
+                    const labelOfSelection10 = document.querySelector(`label[for="${selectedIdOfSelection10}"]`);
+                    if(labelOfSelection10){
+                        selectedTextOfSelection10 = labelOfSelection10.textContent;
+                    }else{
+                        selectedTextOfSelection10 = "unknown";
+                    }
+                    break;
+                }
+            }
+            if (selectedValueOfSelection10) {
+                dict['question10'] = selectedValueOfSelection10;
+            } else {
+                throw new Error("题目10没有选择选项")
+            }
+
+            //多选题11
+            const checkboxesOfSelection11 = document.getElementsByName("selection_11");
+            const selectedValuesOfSelection11 = [];  // 存储选中项的值
+            checkboxesOfSelection11.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedValuesOfSelection11.push(checkbox.value);
+                }
+            });
+            const resultsOfSelection11 = selectedValuesOfSelection11.join('')
+            if(resultsOfSelection11){
+                dict['question11'] = resultsOfSelection11;
+            }else{
+                throw new Error("题目11没有选择选项")
+            }
+
+            //多选题12
+            const checkboxesOfSelection12 = document.getElementsByName("selection_12");
+            const selectedValuesOfSelection12 = [];  // 存储选中项的值
+            checkboxesOfSelection12.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedValuesOfSelection12.push(checkbox.value);
+                }
+            });
+            const resultsOfSelection12 = selectedValuesOfSelection12.join('')
+            if(resultsOfSelection12){
+                dict['question12'] = resultsOfSelection12;
+            }else{
+                throw new Error("题目12没有选择选项")
+            }
+
 
             const response = await fetch('http://localhost:8192/api/submit_answer', {
                 method: 'POST',
@@ -309,8 +439,8 @@
             console.log(result.message);
             window.alert("message1");
         } catch (error) {
-            console.error('提交错误。', error);
-            window.alert('提交错误。'+error);
+            console.error('提交错误。', error.message);
+            window.alert('提交错误,原因:'+error.message);
         }
     }
 </script>
