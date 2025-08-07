@@ -107,6 +107,19 @@ public class PaperController {
         return builder.toString();
 
     }
+    @RequestMapping("/api/deleteAllScores")
+    public ResponseEntity<?>  deleteAllScores(){
+        scoreMapper.deleteAllScore();
+        return ResponseEntity.ok(Map.of(
+                "status", "OK",
+                "message", "数据库中表项删除成功"
+        ));
+    }
+
+    @RequestMapping("/delete")
+    public String delete(){
+        return "delete_scores";
+    }
 
 
 

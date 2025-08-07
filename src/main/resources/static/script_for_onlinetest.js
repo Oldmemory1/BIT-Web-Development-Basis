@@ -269,3 +269,20 @@ async function submit_answers() {
     }
 
 }
+
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    const hour1 = now.getHours()
+    if(hour1>=0&&hour1<12){
+        document.getElementById("greeting").textContent = "Good Morning";
+    }else if(hour1>=12&&hour1<18){
+        document.getElementById("greeting").textContent = "Good Afternoon";
+    }else{
+        document.getElementById("greeting").textContent = "Good Evening";
+    }
+}
+

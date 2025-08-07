@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除数据库中数据</title>
+    <style>
+        .delete_button {
+            width: 150px;
+            height: 50px;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <p><button onclick="delete_scores()" class="delete_button">删除所有数据</button></p>
+</body>
+</html>
+
+<script type="text/javascript">
+    async function delete_scores() {
+        const response = await fetch('http://localhost:8192/api/deleteAllScores', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        const result = await response.json();
+        window.alert(result.message);
+
+    }
+</script>
