@@ -12,9 +12,9 @@ import java.util.*;
 @Log
 @Controller
 public class PaperController {
-    @RequestMapping("/paper")
+    @RequestMapping("/onlinetest")
     public String openPaper(){
-        return "paper";
+        return "onlinetest";
     }
     @PostMapping("/api/submit_answer")
     public ResponseEntity<?> submitAnswer(@RequestBody Map<String, String> answers){
