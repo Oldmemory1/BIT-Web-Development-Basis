@@ -1,4 +1,6 @@
 // script.js
+const start_Time = Date.now();
+
 async function test() {
     try {
         const dict = {
@@ -244,6 +246,9 @@ async function submit_answers() {
         }else{
             throw new Error("题目15没有填写内容");
         }
+        const currentTime = Date.now();
+        const secondsSpent = Math.floor((currentTime - start_Time) / 1000);
+        //window.alert("你已经访问了本页面 " + secondsSpent + " 秒。");
 
         const response = await fetch('http://localhost:8192/api/submit_answer', {
             method: 'POST',
@@ -253,12 +258,14 @@ async function submit_answers() {
             body: JSON.stringify(dict)
         });
         const result = await response.json();
-        console.log(result.data);
-        console.log(result.status);
-        console.log(result.message);
-        window.alert("message1");
+        console.log('分数'+result.data);
+        console.log('返回状态'+result.status);
+        console.log('信息'+result.message);
+        window.alert('试卷提交成功，你获得的分数为:'+result.data+'，所用时间为：'+secondsSpent+'秒');
+        window.location.href = "http://localhost:8192/";
     } catch (error) {
         console.error('提交错误。', error.message);
         window.alert('提交错误,原因:'+error.message);
     }
+
 }

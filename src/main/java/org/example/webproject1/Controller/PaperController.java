@@ -3,7 +3,6 @@ package org.example.webproject1.Controller;
 import jakarta.annotation.Resource;
 import lombok.extern.java.Log;
 import org.example.webproject1.Entity.score;
-import org.example.webproject1.Factory.scoreFactoryProvider;
 import org.example.webproject1.Mapper.ScoreMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -83,10 +82,9 @@ public class PaperController {
         if(answersIsValid){
             scoreMapper.insertScoreEntity(name,score);
             return ResponseEntity.ok(Map.of(
-                    "status", "success",
+                    "status", "OK",
                     "message", "问卷提交成功",
-                    "data", answers,
-                    "score",score
+                    "data", score
 
             ));
 

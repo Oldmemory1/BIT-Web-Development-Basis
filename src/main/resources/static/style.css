@@ -52,3 +52,9 @@
     font-size: 15px;  /* 文字大小 */
     padding: 10px;    /* 内边距 */
 }
+#submit_button {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    padding: 10px 20px;
+}
