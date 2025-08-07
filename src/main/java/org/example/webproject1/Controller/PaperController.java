@@ -98,14 +98,8 @@ public class PaperController {
     }
     @RequestMapping("/api/getAllScores")
     @ResponseBody
-    public String getAllScores(){
-        List<score> scoreList= scoreMapper.getAllScore();
-        StringBuilder builder=new StringBuilder();
-        for(score s:scoreList){
-            builder.append(s.toString());
-        }
-        return builder.toString();
-
+    public List<score> getAllScores(){
+        return scoreMapper.getAllScore();
     }
     @RequestMapping("/api/deleteAllScores")
     public ResponseEntity<?>  deleteAllScores(){

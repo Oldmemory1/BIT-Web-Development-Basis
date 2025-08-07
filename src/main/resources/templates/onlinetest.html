@@ -6,6 +6,20 @@
     <link rel="stylesheet" type="text/css" href="../static/style.css">
     <title>Paper</title>
     <script src="../static/script_for_onlinetest.js" type="text/javascript"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        tr:not(:last-child) {
+            border-bottom: 1px solid gray;
+        }
+    </style>
 </head>
 <body>
 <div>
@@ -242,5 +256,38 @@
 <div>
     <p><button onclick="submit_answers()" id="submit_button">提交</button></p>
 </div>
+
+<div>
+    <h3>学生成绩表</h3>
+    <table id="scoreTable">
+        <thead>
+        <tr>
+            <th>学生ID</th>
+            <th>学生姓名</th>
+            <th>学生分数</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 数据将动态插入 -->
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
+
+<script>
+    fetch('/api/getAllScores')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.querySelector("#scoreTable tbody");
+            data.forEach(score => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                        <td>${score.id}</td>
+                        <td>${score.s_name}</td>
+                        <td>${score.s_score}</td>
+                    `;
+                tableBody.appendChild(row);
+            });
+        });
+</script>
