@@ -34,3 +34,21 @@
     font-size: 16px; /* 字体大小 */
     padding: 10px;   /* 内边距，有助于调整内部文本的位置 */
 }
+#content1 {
+    width: 300px;     /* 宽度 */
+    height: 25px;     /* 高度 */
+    font-size: 15px;  /* 文字大小 */
+    padding: 10px;    /* 内边距 */
+}
+#content2 {
+    width: 300px;     /* 宽度 */
+    height: 25px;     /* 高度 */
+    font-size: 15px;  /* 文字大小 */
+    padding: 10px;    /* 内边距 */
+}
+#content3 {
+    width: 300px;     /* 宽度 */
+    height: 25px;     /* 高度 */
+    font-size: 15px;  /* 文字大小 */
+    padding: 10px;    /* 内边距 */
+}

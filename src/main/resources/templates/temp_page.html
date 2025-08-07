@@ -35,8 +35,26 @@
     <form>
         <label for="content1">content:</label>
         <input type="text" id="content1" name="content1"><br>
-        <input type="button" onclick="submit_content1()" value="提交">
     </form>
+    <p><button onclick="submit_content1()">提交</button></p>
+</div>
+<div>
+    <form>
+        <p>select choice3:</p>
+        <label>
+            <input type="checkbox" name="checkbox1" value="A">A
+        </label><br>
+        <label>
+            <input type="checkbox" name="checkbox1" value="B">B
+        </label><br>
+        <label>
+            <input type="checkbox" name="checkbox1" value="C">C
+        </label><br>
+        <label>
+            <input type="checkbox" name="checkbox1" value="D">D
+        </label>
+    </form>
+    <p><button onclick="submit_selection3()">提交</button></p>
 </div>
 <div>
     <p><button onclick="toggle_content()">点击展开/折叠内容</button></p>
@@ -116,5 +134,23 @@
         }
 
 
+    }
+</script>
+
+<script>
+    function submit_selection3(){
+        // 获取所有name="checkbox1"的复选框元素
+        const checkboxes = document.getElementsByName("checkbox1");
+        const selectedValues = [];  // 存储选中项的值
+        // 遍历所有复选框，检查是否被选中
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedValues.push(checkbox.value);
+            }
+        });
+        const results = selectedValues.join('')
+        // 打印结果到控制台
+        console.log("已选中的选项值:", selectedValues);
+        console.log("结果:",results);
     }
 </script>
