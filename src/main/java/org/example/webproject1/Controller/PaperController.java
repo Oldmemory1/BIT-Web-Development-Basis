@@ -3,6 +3,7 @@ package org.example.webproject1.Controller;
 import jakarta.annotation.Resource;
 import lombok.extern.java.Log;
 import org.example.webproject1.Entity.score;
+import org.example.webproject1.Factory.scoreFactoryProvider;
 import org.example.webproject1.Mapper.ScoreMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,7 @@ public class PaperController {
     @PostMapping("/api/submit_answer")
     public ResponseEntity<?> submitAnswer(@RequestBody Map<String, String> answers){
         boolean answersIsValid = true;
+        String name = answers.get("studentName");
         log.info(answers.toString());
         Set<String> elements = answers.keySet();
         log.info(elements.toString());
@@ -60,12 +62,26 @@ public class PaperController {
         if(answers.get("question10").equals("B")){
             score++;//第10题答案为B
         }
-
-
+        if(answers.get("question11").equals("AB")){
+            score++;//第11题答案为B
+        }
+        if(answers.get("question12").equals("CD")){
+            score++;//第12题答案为B
+        }
+        if(answers.get("question13").equals("1")){
+            score++;//第13题答案为B
+        }
+        if(answers.get("question14").equals("2")){
+            score++;//第14题答案为B
+        }
+        if(answers.get("question15").equals("3")){
+            score++;//第15题答案为B
+        }
 
 
 
         if(answersIsValid){
+            scoreMapper.insertScoreEntity(name,score);
             return ResponseEntity.ok(Map.of(
                     "status", "success",
                     "message", "问卷提交成功",
@@ -73,6 +89,7 @@ public class PaperController {
                     "score",score
 
             ));
+
         }else{
             return ResponseEntity.badRequest().body(Map.of(
                     "status", "fail",
@@ -92,5 +109,7 @@ public class PaperController {
         return builder.toString();
 
     }
+
+
 
 }
