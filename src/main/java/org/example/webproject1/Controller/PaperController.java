@@ -1,17 +1,24 @@
 package org.example.webproject1.Controller;
 
+import jakarta.annotation.Resource;
 import lombok.extern.java.Log;
+import org.example.webproject1.Entity.score;
+import org.example.webproject1.Mapper.ScoreMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.*;
 
 @Log
 @Controller
 public class PaperController {
+    @Resource
+    ScoreMapper scoreMapper;
+
     @RequestMapping("/onlinetest")
     public String openPaper(){
         return "onlinetest";
@@ -38,8 +45,16 @@ public class PaperController {
                     "data", answers
             ));
         }
-
-
+    }
+    @RequestMapping("/api/getAllScores")
+    @ResponseBody
+    public String getAllScores(){
+        List<score> scoreList= scoreMapper.getAllScore();
+        StringBuilder builder=new StringBuilder();
+        for(score s:scoreList){
+            builder.append(s.toString());
+        }
+        return builder.toString();
 
     }
 
