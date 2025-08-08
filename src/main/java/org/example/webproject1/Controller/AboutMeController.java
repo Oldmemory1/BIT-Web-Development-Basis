@@ -13,7 +13,7 @@ public class AboutMeController {
         LocalDate startDate = LocalDate.of(2014, 5, 14);
         LocalDate currentDate = LocalDate.now();
         Period period = Period.between(startDate, currentDate);
-        return String.format("Mincraft 1.7.10 is %d year%s %d month%s %d day%s old",
+        return String.format("Minecraft 1.7.10 is %d year%s %d month%s %d day%s old",
                 period.getYears(), (period.getYears() == 1 ? "" : "s"),
                 period.getMonths(), (period.getMonths() == 1 ? "" : "s"),
                 period.getDays(), (period.getDays() == 1 ? "" : "s"));
