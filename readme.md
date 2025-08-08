@@ -2,7 +2,7 @@
 
 ## 如何使用
 
-### 在IDEA中打开项目，并且修改application.properties中的spring.datasource.url=jdbc:sqlite:D:/IDEA_projects/WebProject1/score.db，将jdbc:sqlite:后的内容换为数据库的路径
+### 在IDEA中打开项目，并且修改src\main\resource\application.properties中的spring.datasource.url=jdbc:sqlite:D:/IDEA_projects/WebProject1/score.db，将jdbc:sqlite:后的内容换为数据库的路径
 
 ### 点击启动项目（上方绿色箭头）
 
@@ -21,3 +21,7 @@
 ### src\main\resources\static目录为前端需要用到的css，js，以及一些图片文件
 
 ### src\main\resources\templates目录为前端需要的html文件
+
+### 使用的是SQLite数据库，需要在环境变量中添加SQLite，SQLite下载地址为：https://sqlite.org/2025/sqlite-tools-win-x64-3500400.zip https://sqlite.org/2025/sqlite-dll-win-x64-3500400.zip SQLite环境变量具体配置可上网自行搜索
+
+### 由于作者暂时没找到access数据库的JDBC，故使用相同表结构复刻了老师给的mdb数据库
