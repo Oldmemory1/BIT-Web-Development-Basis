@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>aboutMe</title>
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../static/aboutMe-style.css">
     <style>
-        {
-            font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-            width:100%;
-            border-collapse:collapse;
-        }
-
         #classes td, #classes th
         {
             font-size:1em;
@@ -33,6 +28,8 @@
             color:#000000;
             background-color:#EAF2D3;
         }
+
+
     </style>
 </head>
 <body>
@@ -40,6 +37,7 @@
     <p>A simple student who is <b>interested in web.</b></p>
 </div>
 <div>
+    <h2>我参加的课程</h2>
     <table id="classes">
         <tr>
             <th>课程名</th>
@@ -165,19 +163,30 @@
 </div>
 
 <div>
-    <p1>洛天依</p1>
-    <p><a href=https://space.bilibili.com/36081646>相关链接(BiliBili)</a></p>
-    <p2>乐正绫</p2>
-    <p><a href=https://zh.wikipedia.org/wiki/%E4%B8%89%E4%BD%93_(%E5%B0%8F%E8%AF%B4)>相关链接(Wikipedia)</a></p>
-    <p3>言和</p3>
-    <p><a href=https://zh.wikipedia.org/wiki/%E5%B9%B3%E5%87%A1%E7%9A%84%E4%B8%96%E7%95%8C)>相关链接(Wikipedia)</a></p>
-    <p><img src="https://i.pximg.net/img-original/img/2022/08/24/23/44/54/100737465_p0.jpg" alt="初音未来" height="500" width="500" /></p>
-    <p><img src="https://i.pximg.net/img-original/img/2022/08/30/00/31/41/100858113_p0.png" alt="开心时的样子" height="500" width="500" /></p>
-    <p4>something which you might interested</p4>
-    <p>One of my friend tries to buy plague inc on steam store,however when he has paid,he found that he bought the soundtrack rather the game.</p>
+    <div>
+        <h2>喜欢的歌姬</h2>
+        <p class="p1">洛天依</p>
+        <p><a href=https://space.bilibili.com/36081646>相关链接(BiliBili)</a></p>
+        <p><img src="../static/luotianyi.png" alt="洛天依" height="500" width="500"></p>
+        <p class="p2">乐正绫</p>
+        <p><a href=https://space.bilibili.com/406948651>相关链接(BiliBili)</a></p>
+        <p><img src="../static/yuezhengling.jpg" alt="乐正绫" height="500" width="500"></p>
+        <p class="p3">言和</p>
+        <p><a href=https://space.bilibili.com/406948276>相关链接(BiliBili)</a></p>
+        <p><img src="../static/yanhe.jpg" alt="言和" height="500" width="500"></p>
+    </div>
+
+    <div>
+        <h2>喜欢的专辑</h2>
+        <p>アンラベル・トリガー Original Sound Track & 録り下ろしドラマCD</p>
+        <p><img src="../static/album1.jpg" alt="言和" height="500" width="500"></p>
+    </div>
+
+    <p class="p4">something which you might interest</p>
+    <div th:text="${howOldIsMinecraft1_7_10}"></div>
+
 </div>
-
-
 
 </body>
 </html>
+
