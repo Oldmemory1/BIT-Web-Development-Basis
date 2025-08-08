@@ -17,3 +17,7 @@
 ### 网址http://localhost:8192/api/** 为前端与后端交互的API，用于onlinetest展示所有人的成绩，提交答案，删除所有数据等功能
 
 ### 网址http://localhost:8192/test 为以前做的测试界面，无用途
+
+### src\main\resources\static目录为前端需要用到的css，js，以及一些图片文件
+
+### src\main\resources\templates目录为前端需要的html文件
