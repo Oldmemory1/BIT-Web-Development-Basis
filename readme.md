@@ -24,4 +24,4 @@
 
 ### 使用的是SQLite数据库，需要在环境变量中添加SQLite，SQLite下载地址为：https://sqlite.org/2025/sqlite-tools-win-x64-3500400.zip https://sqlite.org/2025/sqlite-dll-win-x64-3500400.zip SQLite环境变量具体配置可上网自行搜索
 
-### 由于作者暂时没找到access数据库的JDBC，故使用相同表结构复刻了老师给的mdb数据库
+### 由于作者暂时没找到access数据库IDEA提供的驱动程序以及导入，故使用相同表结构复刻了老师给的mdb数据库
