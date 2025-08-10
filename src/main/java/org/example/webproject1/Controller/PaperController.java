@@ -3,6 +3,7 @@ package org.example.webproject1.Controller;
 import jakarta.annotation.Resource;
 import lombok.extern.java.Log;
 import org.example.webproject1.Entity.score;
+import org.example.webproject1.Factory.scoreFactoryProvider;
 import org.example.webproject1.Mapper.ScoreMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -76,8 +77,6 @@ public class PaperController {
         if(answers.get("question15").equals("3")){
             score++;//第15题答案为B
         }
-
-
 
         if(answersIsValid){
             scoreMapper.insertScoreEntity(name,score);
